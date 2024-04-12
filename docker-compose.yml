@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  odoo-service:
+    image: odoo-dev
+    tty: true
+    container_name: odoo
+    volumes:
+      - ./:/odoo
