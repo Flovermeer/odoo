@@ -11,7 +11,8 @@ RUN apt update && \
     apt-get install -y python-dev-is-python3 && \ 
     apt-get install -y libldap2-dev && \
     apt-get install -y libssl-dev && \
-    apt-get install -y postgresql #Debian/Ubuntu8
+    apt-get install -y postgresql #Debian/Ubuntu8 && \
+    apt-get install -y inetutils-ping
 
 RUN pip install psycopg2-binary
     
