@@ -5,6 +5,11 @@ services:
     image: odoo-dev
     tty: true
     container_name: odoo
+    environment:
+      - HOST=127.0.0.1
+      - PORT=5432
+      - USER=default
+      - PASSWORD=default
     volumes:
       - ./:/odoo
     networks:
@@ -16,13 +21,16 @@ services:
   postgres:
     image: postgres:14-alpine
     container_name: database
+    restart: always
+    user: postgres
     ports:
       - 5432:5432
     networks:
       Databasenet :
         ipv4_address : 172.20.0.3
     volumes:
-      - ~/apps/postgres:/var/lib/postgresql/data
+      - ./data:/pg-data
+      - ./logs:/var/log/postgresql
     environment:
       - POSTGRES_PASSWORD=default
       - POSTGRES_USER=default
