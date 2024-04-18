@@ -7,15 +7,31 @@ services:
     container_name: odoo
     volumes:
       - ./:/odoo
+    networks:
+      Databasenet :
+        ipv4_address : 172.20.0.2
+    ports:
+      - 8069:8069
 
   postgres:
     image: postgres:14-alpine
     container_name: database
     ports:
       - 5432:5432
+    networks:
+      Databasenet :
+        ipv4_address : 172.20.0.3
     volumes:
       - ~/apps/postgres:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=default
       - POSTGRES_USER=default
       - POSTGRES_DB=default
+
+networks:
+  Databasenet:
+    ipam:
+      driver : default
+      config :
+        - subnet : "172.20.0.0/16"
+      

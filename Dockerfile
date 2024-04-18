@@ -1,5 +1,9 @@
 FROM ubuntu:22.04
 
+
+ENV TZ=Europe/Paris
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # install python 3.10
 RUN apt update && \ 
     apt-get -y install sudo && \
