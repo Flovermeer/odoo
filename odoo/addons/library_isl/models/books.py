@@ -14,6 +14,6 @@ class BookModel(models.Model):
     publication_date = fields.Date()
     comments = fields.One2many('a.commentmodel','a.commentmodel.comment_id',string='Commentaires')
     
-    owner = fields.Many2one('a.usermodel','a.usermodel.user_id',)
+    owner = fields.Many2one('a.usermodel','a.usermodel.user_id',string='Proprietaire')
     
 
