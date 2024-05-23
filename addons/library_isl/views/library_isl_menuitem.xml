@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Menus -->
+    <menuitem
+        id="books_menu_calendar"
+        name="Books"
+        sequence="10"
+        web_icon="calendar,static/description/icon.png"
+        groups="base.group_user"/>
+    
+</odoo>
