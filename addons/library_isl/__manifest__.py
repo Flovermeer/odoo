@@ -8,7 +8,7 @@
     
     'installable': True,
     'application': True,
-    'license': 'LGPL-3'
+    'license': 'LGPL-3',
 
     'data': [
         'views/library_isl_views.xml',
