@@ -14,7 +14,7 @@ services:
       - ./:/odoo
     networks:
       Databasenet:
-        ipv4_address: 172.20.0.3
+        ipv4_address: 172.20.0.2
     ports:
       - 8069:8069
 
