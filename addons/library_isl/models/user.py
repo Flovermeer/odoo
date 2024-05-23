@@ -5,7 +5,7 @@ class UserModel (models.Model) :
     _name = 'a.usermodel'
     _description = 'User table'
 
-    user_id = fields.Id()
+    #user_id = fields.Id()
     last_name = fields.Char()
     first_name = fields.Char()
     email = fields.Char() #todo : contrainte unique

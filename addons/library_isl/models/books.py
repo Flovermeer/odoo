@@ -6,7 +6,7 @@ class BookModel(models.Model):
     _description = 'A little project ISL'
     
 
-    book_id = fields.Id()
+    # book_id = fields.Integer()
     title = fields.Char()
     # NOT USING ISBN as ID because we could have two same examples of the same book #
     isbn = fields.Char()
