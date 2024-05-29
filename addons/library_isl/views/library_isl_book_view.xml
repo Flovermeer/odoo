@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_calendar_event_form_quick_create" model="ir.ui.view">
+        <field name="name">a.bookmodel.form.quick_create</field>
+        <field name="model">a.bookmodel</field>
+        <field name="priority" eval="2"/>
+        <field name="arch" type="xml">
+            <form string="Books">
+                <sheet>
+                    <field name="title" />
+                    <field name="isbn"/>
+                    <field name="publication_date"/>
+                    <div class="o_row">
+                        <h1 class="w-100"><field name="title" nolabel="1" placeholder="Add title" colspan="2"/></h1>
+                    </div>
+                    <group>
+                        <field name="title" />
+                        <field name="isbn"/>
+                        <field name="publication_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -6,8 +6,7 @@
     'description': """description""",
     'category': 'Services/Library',
     'data': [
-        'views/library_isl_views.xml',
-        'views/library_isl_menuitem.xml'
+        'views/library_isl_book_view.xml',
     ],
     'installable': True,
     'application': True,
