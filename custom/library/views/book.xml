@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Menu générique -->
+    <menuitem id="menu_book" name="Library"/>
+
+    <!-- Vue liste, on personnalise les en-têtes de la table -->
+    <record id="view_tree_book" model="ir.ui.view">
+        <field name="name">Book Tree</field> <!-- nom pour le dev, ne sera pas affiché -->
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="state"/>
+                <field name="publication_date"/>
+                <field name="author"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- Vue form, on personnalise le formulaire -->
+    <record id="view_form_book" model="ir.ui.view">
+        <field name="name">Book Form</field> <!-- nom pour le dev, ne sera pas affiché -->
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Rent / Give back"
+                            type="object"
+                            name="rent_book" 
+                            class="btn-primary"/><!-- name = nom de la fonction appelée qui se trouve dans la classe du modèle -->
+                </header>
+                <sheet>
+                    <group> <!-- += à une colonne -->
+                        <field name="name"/>
+                        <field name="publication_date"/>
+                        <field name="state"/>
+                    </group>
+                    <group>
+                        <field name="author"/>
+                        <field name="image" widget="image"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action qui va permettre d'ouvrir la vue -->
+    <record id="action_book_list" model="ir.actions.act_window">
+        <field name="name">Book List</field>
+        <field name="res_model">library.book</field> <!-- le model sur lequel on va travailler -->
+        <field name="view_mode">tree,form</field> <!-- vues autorisées sur le modèle (tree=liste) -->
+    </record>
+
+    <!-- Sous-menu pour afficher la liste des livres -->
+    <menuitem id="menu_book_list" 
+              name="Book List" 
+              parent="menu_book"
+              action="action_book_list"/>
+
+
+</odoo>
