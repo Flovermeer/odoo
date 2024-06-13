@@ -1,0 +1,4 @@
+# library_isl/security/ir.model.access.csv
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_library_book,access_library_book,model_library_book,,1,1,1,1
+access_library_book_tracking,access_library_book_tracking,model_library_book_tracking,,1,1,1,1
